@@ -2,17 +2,20 @@ import { defineConfig } from "sanity";
 import { deskTool } from "sanity/desk";
 import schemas from './sanity/schemas';
 import {DesktopIcon, CodeBlockIcon} from '@sanity/icons'
-import { visionTool } from "@sanity/vision";
+import {visionTool} from '@sanity/vision'
+
+const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID
+const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET
 
 const config = defineConfig([
     {
-        projectId : "nqg4ooh5",
-        dataset: 'production',
-        name: 'prod',
-        title: 'My running log',
+        projectId,
+        dataset,
+        name: 'KP_Running_Studio',
+        title: 'KP Running Studio',
         icon: DesktopIcon,
-        apiVersion: "2023-10-22",
-        basePath: "/admin",
+        apiVersion: "",
+        basePath: "/studio",
         plugins: [deskTool(), visionTool()],
         schema: { types: schemas },        
     },

@@ -23,8 +23,7 @@ const post = {
         {
             name: 'author',
             title: 'Author',
-            type: 'reference',
-            to: { type: 'author' }, // assuming you have an 'author' schema
+            type: 'string',
         },
         {
             name: 'publishedAt',
